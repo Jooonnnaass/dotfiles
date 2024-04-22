@@ -21,9 +21,6 @@ return {
             vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, opts)
             vim.keymap.set("n", "<leader>cA", crates.upgrade_all_crates, opts)
 
-            vim.keymap.set("n", "<leader>cx", crates.expand_plain_crate_to_inline_table, opts)
-            vim.keymap.set("n", "<leader>cX", crates.extract_crate_into_table, opts)
-
             vim.keymap.set("n", "<leader>cH", crates.open_homepage, opts)
             vim.keymap.set("n", "<leader>cR", crates.open_repository, opts)
             vim.keymap.set("n", "<leader>cD", crates.open_documentation, opts)
