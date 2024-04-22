@@ -12,6 +12,8 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- toggle terminal
 vim.keymap.set("n", "t", "<CMD>ToggleTerm<CR>")
 
+vim.keymap.set("t", "<esc>", "<CMD>ToggleTerm<CR>")
+
 -- vsplit current buffer
 vim.keymap.set("n", "<leader>s", "<CMD>:vsplit<CR>")
 
