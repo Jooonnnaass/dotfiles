@@ -13,6 +13,8 @@ return {
 	config = function()
 		-- Reserve a space in the gutter
 		vim.opt.signcolumn = 'yes'
+
+		vim.opt.number = true
 		-- Activate gitsigns
 		vim.diagnostic.config({
 			signs = true,
@@ -66,7 +68,7 @@ return {
 				vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 				vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 				vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-				vim.keymap.net('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+				vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 				vim.keymap.set('n', 'ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
 				local id = vim.tbl_get(event, 'data', 'client_id')
