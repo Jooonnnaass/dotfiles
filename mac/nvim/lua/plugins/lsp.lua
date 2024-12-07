@@ -69,6 +69,7 @@ return {
 				vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 				vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 				vim.keymap.set('n', 'ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+				vim.keymap.set('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
 
 				local id = vim.tbl_get(event, 'data', 'client_id')
 				local client = id and vim.lsp.get_client_by_id(id)
@@ -123,7 +124,7 @@ return {
 			snippet = {
 				expand = function(args)
 					-- You need Neovim v0.10 to use vim.snippet
-					vim.snippet.expand(args.body)
+					-- vim.snippet.expand(args.body)
 					require('luasnip').lsp_expand(args.body)
 				end,
 			},
