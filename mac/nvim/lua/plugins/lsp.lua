@@ -87,7 +87,7 @@ return {
 		require('mason').setup({})
 		require('mason-lspconfig').setup({
 			-- Always installed lsps
-			ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls', 'pyright', 'clangd' },
+			ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls', 'html', 'tailwindcss' },
 			handlers = {
 				function(server_name)
 					require('lspconfig')[server_name].setup({})
@@ -103,6 +103,24 @@ return {
 								},
 							},
 						},
+					})
+				end,
+
+				html = function()
+					require('lspconfig').html.setup({
+						filetypes = {
+							"html",
+							"htmldjango"
+						},
+						{
+							configurationSection = { "html", "css", "javascript" },
+							embeddedLanguages = {
+								css = true,
+								javascript = true
+							},
+							provideFormatter = true
+						},
+						single_file_support = true
 					})
 				end,
 			}
