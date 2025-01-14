@@ -10,7 +10,7 @@ config.color_scheme = 'Catppuccin Frappe'
 
 -- JetBrains Mono Nerd Font
 config.font =
-    wezterm.font('JetBrains Mono', { weight = 'Regular', italic = false })
+	wezterm.font('JetBrains Mono', { weight = 'Regular', italic = false })
 
 -- Font size
 config.font_size = 14.0
