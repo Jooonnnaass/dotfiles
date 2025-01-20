@@ -9,8 +9,11 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "nvim-java/nvim-java",
   },
   config = function()
+    require('java').setup()
+
     -- Reserve a space in the gutter
     vim.opt.signcolumn = 'yes'
 
@@ -125,6 +128,15 @@ return {
         end,
       }
     })
+
+    require('lspconfig').jdtls.setup({
+      handlers = {
+        ["$/progress"] = function()
+
+        end,
+      }
+    })
+
     local cmp = require('cmp')
 
     require('luasnip.loaders.from_vscode').lazy_load()
